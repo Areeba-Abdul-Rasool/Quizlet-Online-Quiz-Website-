@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Quizly</title>
+    <link href="/src/output.css" rel="stylesheet">
+    
+    <script src="/Public/js/loadComponents.js" defer></script>
+    <script src="/Public/js/createQuiz.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    </style>
+    
+</head>
+
+<body class="bg-gray-100 flex flex-col min-h-screen">
+
+    <div id="header"></div> 
+
+    <div class="flex-grow flex items-center justify-center">
+        <div class="w-3/5 max-w-lg bg-white p-6 rounded shadow-md mx-auto"> 
+            <h1 class="text-2xl font-bold text-center mb-4">Create a Quiz</h1>
+
+            <div class="mb-6">
+                <label class="block font-semibold">Subject:</label>
+                <input type="text" id="subject" class="w-full border p-2 rounded mb-2">
+
+                <label class="block font-semibold">Topic:</label>
+                <input type="text" id="topic" class="w-full border p-2 rounded mb-2">
+
+                <label class="block font-semibold">Number of Questions:</label>
+                <input type="number" id="numQuestions" class="w-full border p-2 rounded mb-2" min="1">
+
+                <button onclick="generateForm()" 
+                    class="bg-blue-500 text-white px-4 py-2 rounded mt-2 w-full">Create Questions</button>
+            </div>
+
+            <!-- dynamic Form -->
+            <form id="quizForm" class="hidden">
+                <h2 class="text-xl font-semibold">Enter Questions</h2>
+                <div id="questionsContainer"></div>
+                <button type="button" onclick="saveQuiz()"
+                    class="bg-green-500 text-white px-4 py-2 rounded mt-4 w-full">Save Quiz</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="footer" class="mt-auto"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Quizlet</title>
+    <link href="/src/output.css" rel="stylesheet">
+    
+<script src="/Public/js/loadComponents.js" defer></script>    
+    <link href="/src/output.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            flex: 1; 
+    
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <div id="header"></div>
+
+    <div class="content max-w-3xl mx-auto text-center py-16">
+        <h1 class="text-4xl font-extrabold text-gray-900 mb-6">Welcome to Quizlet</h1>
+        <p class="text-lg text-gray-700 mb-8">Choose an option below:</p>
+
+        <div class="space-y-6">
+            <button id="takeQuizBtn"
+                class="bg-blue-500 text-white px-6 py-3 rounded-lg text-lg font-bold hover:bg-blue-600 w-full">
+                Take a Quiz
+            </button>
+            <button id="createQuizBtn"
+                class="bg-green-500 text-white px-6 py-3 rounded-lg text-lg font-bold hover:bg-green-600 w-full">
+                Create a Quiz
+            </button>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("takeQuizBtn").addEventListener("click", function () {
+                window.location.href = "takeQuiz.html";
+            });
+
+            document.getElementById("createQuizBtn").addEventListener("click", function () {
+                window.location.href = "createQuiz.html";
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

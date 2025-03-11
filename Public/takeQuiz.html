@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Quiz</title>
+    <link href="/src/output.css" rel="stylesheet">
+    <script src="/Public/js/loadComponents.js" defer></script>    <script src="/Public/js/takeQuiz.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex flex-col min-h-screen">
+
+    <div id="header"></div>
+
+    <div class="flex-grow flex items-center justify-center">
+        <div class="w-3/5 max-w-lg bg-white p-6 rounded shadow-md mx-auto">
+            <h1 class="text-2xl font-bold text-center mb-4">Take a Quiz</h1>
+
+            <div id="quizSelection">
+                <label class="block font-semibold">Select Quiz:</label>
+                <select id="quizDropdown" class="w-full border p-2 rounded mb-4"></select>
+                <button onclick="startQuiz()" class="bg-blue-500 text-white px-4 py-2 rounded w-full">Start
+                    Quiz</button>
+            </div>
+
+            <div id="quizContainer" class="hidden">
+                <h2 id="questionText" class="text-lg font-semibold"></h2>
+                <div id="optionsContainer" class="mt-2"></div>
+                <p class="text-red-500 mt-2">Time Left: <span id="timer">20</span> sec</p>
+                <button onclick="nextQuestion()"
+                    class="bg-green-500 text-white px-4 py-2 rounded mt-4 w-full">Next</button>
+            </div>
+
+
+            <div id="quizResult" class="hidden text-center mt-6">
+                <h2 class="text-xl font-bold">Quiz Completed!</h2>
+                <p class="text-lg mt-2">Your Score: <span id="scoreDisplay"></span>/ <span id="totalQuestions"></span>
+                </p>
+                <button onclick="retakeQuiz()" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Retake
+                    Quiz</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="footer" class="mt-auto"></div>
+
+</body>
+
+</html>
